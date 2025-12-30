@@ -4,7 +4,7 @@ Ejercicios prácticos basados en programación concurrente en C++ moderno.
 
 ## Ejercicios
 
-### 1. Creación de Hilos Básica (`01_hello_threads.cpp`)
+### 1. Creación de Hilos Básica (`01_hello_threads.cpp`) - OK
 **Objetivo:** Entender cómo lanzar hilos y esperar su finalización.
 **Enunciado:** Crea un programa que lance dos hilos:
 1. Uno usando una función global `void f1()`.
@@ -12,12 +12,12 @@ Ejercicios prácticos basados en programación concurrente en C++ moderno.
 3. Asegúrate de usar `.join()` para esperar a que terminen.
 [cite_start]*Referencia: Slides 12 y 16 del temario.*
 
-### 2. Condiciones de Carrera (`02_race_condition.cpp`)
+### 2. Condiciones de Carrera (`02_race_condition.cpp`) - OK
 **Objetivo:** Visualizar el problema de acceder a datos compartidos sin protección.
 **Enunciado:** Crea una variable global `int counter = 0`. Lanza dos hilos que intenten incrementar esa variable 10,000 veces cada uno sin usar mutex. Imprime el resultado final (probablemente será incorrecto, distinto de 20,000).
 [cite_start]*Referencia: Slide 15[cite: 188].*
 
-### 3. Exclusión Mutua con RAII (`03_mutex_guard.cpp`)
+### 3. Exclusión Mutua con RAII (`03_mutex_guard.cpp`) - OK
 **Objetivo:** Solucionar el ejercicio anterior usando `std::mutex` y `std::unique_lock`.
 **Enunciado:** Modifica el ejercicio anterior para proteger el incremento de la variable usando `std::unique_lock`. Observa cómo ahora el resultado es correcto.
 [cite_start]*Referencia: Slide 22[cite: 323].*
