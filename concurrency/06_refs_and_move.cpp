@@ -1,5 +1,49 @@
 #include <iostream>
 #include <thread>
+
+
+void modificar(int &valor){
+
+    valor = valor +2;
+
+}
+
+
+
+int main(){
+
+    int numero=2;
+    std::thread t1 {modificar, std::ref(numero)}; //para pasar una valor por referencia hay que poner std::ref
+
+    std::thread t2;
+    t2 = std::move(t1);
+
+    t2.join();
+
+    std::cout << numero << std::endl;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+#include <iostream>
+#include <thread>
 #include <utility> // para std::ref
 
 void modificar_valor(int& n) {
@@ -31,3 +75,4 @@ int main() {
     t3.join();
     return 0;
 }
+*/

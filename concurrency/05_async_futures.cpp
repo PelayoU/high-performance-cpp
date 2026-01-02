@@ -1,3 +1,42 @@
+//la diferencia entre thread y asycn es que async permitia hacer return, pero era lo mismo, hilos que ejecutan una tarea
+#include <iostream>
+#include <thread>
+#include <future>
+
+
+
+
+int tarea(int x){
+    return x*2;
+
+}
+
+void otraTarea(){
+
+}
+
+
+int main (){
+
+    int numero = 10;
+    std::future<int> r = std::async(tarea, numero);
+    std::this_thread::sleep_for(std::chrono::seconds(2)); //simulamos que hacemos otra tarea
+
+    int valor = r.get();
+
+    std::cout << "El doble de "<< numero << " es "<< valor << std::endl;
+
+    return 0;
+
+
+}
+
+
+
+
+
+/*
+
 #include <iostream>
 #include <future>
 #include <thread>
@@ -33,3 +72,6 @@ int main() {
     std::cout << "Main: Resultado recibido de la tarea asincrona: " << valor << "\n";
     return 0;
 }
+
+
+*/

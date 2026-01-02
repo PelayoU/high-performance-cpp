@@ -1,5 +1,72 @@
 #include <iostream>
 #include <thread>
+
+//Creamos una cola
+
+std::queue<int> cola; //una cola de ints
+std::mutex m;
+std::condition_variable cv;
+
+//diferencia entre notify_one y nofity_all.
+
+void productor(){
+
+    for (int i=0; i<100; i++){
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        std::unique_lock<std::mutex> l (m);
+        cola.push(i);
+        std::cout << "[Productor] Generado dato: " << i << "\n";
+    } //al salir de esta llave se llama al destructor de unique_lock y se hace unlock
+
+    cv.notify_one(); //notificamos al consumidor que esta dormido esperando una notificacion que hemos metido algo
+
+}
+
+
+int main(){
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+#include <iostream>
+#include <thread>
 #include <mutex>
 #include <condition_variable>
 #include <queue>
@@ -52,3 +119,5 @@ int main() {
     t2.join();
     return 0;
 }
+
+*/

@@ -17,7 +17,7 @@ Ejercicios prácticos basados en programación concurrente en C++ moderno.
 **Enunciado:** Crea una variable global `int counter = 0`. Lanza dos hilos que intenten incrementar esa variable 10,000 veces cada uno sin usar mutex. Imprime el resultado final (probablemente será incorrecto, distinto de 20,000).
 [cite_start]*Referencia: Slide 15[cite: 188].*
 
-### 3. Exclusión Mutua con RAII (`03_mutex_guard.cpp`) - OK
+### 3. Exclusión Mutua con RAII (`03_mutex_guard.cpp`) - OKi
 **Objetivo:** Solucionar el ejercicio anterior usando `std::mutex` y `std::unique_lock`.
 **Enunciado:** Modifica el ejercicio anterior para proteger el incremento de la variable usando `std::unique_lock`. Observa cómo ahora el resultado es correcto.
 [cite_start]*Referencia: Slide 22[cite: 323].*
@@ -27,12 +27,12 @@ Ejercicios prácticos basados en programación concurrente en C++ moderno.
 **Enunciado:** Implementa una cola segura entre hilos. Un hilo (productor) genera números y los mete en la cola; otro hilo (consumidor) espera a que haya datos y los procesa. Usa `notify_one()` y `wait()`.
 [cite_start]*Referencia: Slide 27[cite: 392, 413].*
 
-### 5. Tareas Asíncronas (`05_async_futures.cpp`)
+### 5. Tareas Asíncronas (`05_async_futures.cpp`) - OK
 **Objetivo:** Obtener valores de retorno de hilos.
 **Enunciado:** Usa `std::async` para lanzar una tarea que calcule un valor (ej. doble de un número) y recupera el resultado usando `std::future::get()`.
 [cite_start]*Referencia: Slide 33[cite: 486].*
 
-### 6. Referencias y Movimiento (`06_refs_and_move.cpp`)
+### 6. Referencias y Movimiento (`06_refs_and_move.cpp`) - OK
 **Objetivo:** Aprender a pasar variables por referencia a un hilo y mover la propiedad de un hilo.
 **Enunciado:**
 1. Crea una función que modifique un valor pasado por referencia.
