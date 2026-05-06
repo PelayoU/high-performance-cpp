@@ -1,0 +1,41 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Claude Code
+.claude/
+
+# CMake
+build/
+**/build/
+CMakeCache.txt
+CMakeFiles/
+**/CMakeFiles/
+cmake_install.cmake
+**/cmake_install.cmake
+Makefile
+**/Makefile
+*.cmake
+!**/CMakeLists.txt
+!**/cmake-lib/*.cmake
+CTestTestfile.cmake
+**/CTestTestfile.cmake
+compile_commands.json
+
+# Compiled binaries
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+*.exe
+a.out
+*.out
+
+# IDE / editors
+.idea/
+.vscode/
+.cache/
+*.swp
+*.swo
+*~
